@@ -49,6 +49,10 @@ jobs:
           cp -f ./*.json geoip/ 2>/dev/null || true
           cp -f ./*.txt  geoip/ 2>/dev/null || true
           cp -f ./*.py   geoip/ 2>/dev/null || true
+          if [ -d "./data" ] && [ -n "$(ls -A ./data/*.txt 2>/dev/null)" ]; then
+            mkdir -p geoip/data
+            cp -f ./data/*.txt geoip/data/
+          fi
 
       - name: Set tag
         if: github.ref_name == 'master'
@@ -79,6 +83,7 @@ jobs:
           ${{ env.CURL }} -o refilter.txt https://raw.githubusercontent.com/1andrevich/Re-filter-lists/refs/heads/main/ipsum.lst
           ${{ env.CURL }} -o refiltercommunity.txt https://raw.githubusercontent.com/1andrevich/Re-filter-lists/refs/heads/main/community_ips.lst
           ${{ env.CURL }} -o antifilternetwork.txt https://antifilter.network/download/ip.lst
+          ${{ env.CURL }} -o antifiltersubnet.txt https://antifilter.network/download/subnet.lst
           #${{ env.CURL }} -o antifilternetworkcommunity.txt https://antifilter.network/downloads/custom.lst
           ${{ env.CURL }} -o cdn.lst https://raw.githubusercontent.com/mansourjabin/cdn-ip-database/refs/heads/main/data/cdn.lst
           ${{ env.CURL }} -o merged.sum https://raw.githubusercontent.com/PentiumB/CDN-RuleSet/refs/heads/main/release/merged.sum

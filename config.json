@@ -55,6 +55,60 @@
       }
     },
     {
+      "type": "text",
+      "action": "remove",
+      "args": {
+        "name": "direct",
+        "uri": "./antifiltersubnet.txt",
+        "onlyIPType": "ipv4"
+      }
+    },
+    {
+      "type": "text",
+      "action": "add",
+      "args": {
+        "name": "discord",
+        "uri": "https://raw.githubusercontent.com/fatyzzz/ipset-discord/refs/heads/main/discord.txt"
+      }
+    },
+    {
+      "type": "text",
+      "action": "add",
+      "args": {
+        "name": "discord",
+        "uri": "https://raw.githubusercontent.com/GhostRooter0953/discord-voice-ips/refs/heads/master/voice_domains/discord-voice-ip-list"
+      }
+    },
+    {
+      "type": "text",
+      "action": "add",
+      "args": {
+        "name": "threema",
+        "uri": "./data/threema.txt"
+      }
+    },
+    {
+      "type": "text",
+      "action": "add",
+      "args": {
+        "name": "roblox",
+        "uri": "./data/roblox.txt"
+      }
+    },
+    {
+      "type": "maxmindGeoLite2ASNCSV",
+      "action": "add",
+      "args": {
+        "ipv4": "./geolite2/GeoLite2-ASN-Blocks-IPv4.csv",
+        "ipv6": "./geolite2/GeoLite2-ASN-Blocks-IPv6.csv",
+        "wantedList": {
+          "blizzard": [
+            "AS57976"
+          ]
+        }
+      }
+    },
+    {
       "type": "maxmindGeoLite2ASNCSV",
       "action": "add",
       "args": {
@@ -151,7 +205,7 @@
       "action": "add",
       "args": {
         "name": "direct",
-        "uri": "./CUSTOM-LIST-ADD.txt"
+        "uri": "./data/list.txt"
       }
     },
     {
@@ -196,6 +250,15 @@
       "args": {
         "name": "direct",
         "uri": "./cdn.lst",
+        "onlyIPType": "ipv4"
+      }
+    },
+    {
+      "type": "text",
+      "action": "remove",
+      "args": {
+        "name": "direct",
+        "uri": "./data/exclude_cdn.txt",
         "onlyIPType": "ipv4"
       }
     },
@@ -252,7 +315,7 @@
       "action": "add",
       "args": {
         "name": "whitelist",
-        "uri": "./CUSTOM-WHITELIST.txt"
+        "uri": "./data/whitelist.txt"
       }
     },
     {
@@ -268,15 +331,6 @@
           "0.0.0.0/8",
           "::/128"
         ]
-      }
-    },
-    {
-      "type": "text",
-      "action": "add",
-      "args": {
-        "name": "direct",
-        "uri": "./CUSTOM-FIX-ADD.txt",
-        "onlyIPType": "ipv4"
       }
     }
   ],
