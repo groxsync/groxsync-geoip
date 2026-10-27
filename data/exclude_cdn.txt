@@ -78,7 +78,7 @@
 95.216.0.0/16
 95.217.0.0/16
 
-# ZeroCDN IP Set (AS48158 – DigitalOne AG)
+# Zero CDN IP Set (AS48158 – DigitalOne AG)
 
 146.255.212.0/23
 176.58.48.0/23
